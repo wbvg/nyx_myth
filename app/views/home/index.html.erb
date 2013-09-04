@@ -1,0 +1,63 @@
+<div class="wrapper">
+    <div class="background">
+      <div class="widget">
+        <div class="leftside">
+
+          <div class="front">
+
+
+    <% if user_signed_in? %>
+    <h5>Hi <%= current_user.username %></h5>
+      <a href="/chapters"><div class="btn-signup">Let's Read</div></a>
+
+<%else %>
+    <h5>Free Chapter Preview</h5>
+              <a href="/register"><div class="btn-signup">Register Now</div></a>
+<br />
+              <a href="#"><div class="btn-signup2 settings">Sign in</div></a>
+
+<br />
+              <% end %>
+
+
+
+
+          </div>
+
+          <div class="back">
+<%= render "home/new" %>
+
+<!-- ======= -->
+
+          </div>
+        </div>
+
+        <div class="rightside">
+          <div class="front">
+            <ul class="infos">
+              <li>
+                <i class="sun"></i>
+                <span>Inside of us all there is a world of myth of only a time
+made up of you. <br />What we are to this inward vision can only be expressed by way of
+myth. <br />There is a way out by gazing into oneself.</span>
+
+              </li>
+            </ul>
+          </div>
+
+          <div class="back">
+            <a href="#"><div class="return">Back</div></a>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

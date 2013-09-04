@@ -1,0 +1,21 @@
+  <div class="row">
+    <div class="col-lg-10">
+          <h4 class="btn-chapter-title"><%= @chapter.title %></h4>
+
+  <%- @sections.each do |section| %>
+    <h4 class="btn-section"><%= section.section_title %></h4>
+    <h2 class="line-heighter"><%= section.pages %></h2>
+ <% end %>
+
+    <div class="marketing">
+    <h3 class="bottomer">Are you enjoying this?<br/>Support a Creative</h3>
+
+
+    <a href="<%= @chapter.book_url %>" class="btn-signup_reading">BUY THE BOOK | Only $<%= @chapter.cost %></a>
+   </div>
+
+  </div>
+
+
+
+</div>

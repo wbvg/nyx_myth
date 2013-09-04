@@ -1,0 +1,15 @@
+        <!%#= form do |f| %>
+        <!-- (# resource, :as => resource_name, :url => registration_path(resource_name))
+ -->
+        <!%#= devise_error_messages! %>
+
+        <%= f.text_field :username, :autofocus => true , placeholder: 'Username'  %>
+
+
+        <%= f.email_field :email, placeholder: 'user@domain.com'  %>
+        <%= f.text_field :gender, placeholder: 'Gender'  %>
+
+        <%= f.password_field :password, placeholder: 'Min 6 Characters'  %>
+        <%= f.password_field :password_confirmation %>
+<%= f.submit "Sign up", :class => "btn btn-primary btn-large" %>
+        <% end %>

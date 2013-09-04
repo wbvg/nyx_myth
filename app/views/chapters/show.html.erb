@@ -1,0 +1,74 @@
+<body class="cbp-spmenu-push">
+  <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left topper" id="cbp-spmenu-s1">
+    <h3 class='topper'><%= @chapter.title %></h3>
+    <ul>
+      <%- @sections.limit(1).each do |section| %>
+      <li class="lefting"><a href="#" data-id="<%= section.id %>"><%= section.section_title %></a></li>
+      <% end %>
+    </ul>
+  </nav>
+
+ <div class="container">
+     <div class="read-menu" id="showLeftPush" >
+        <section>
+            <button class="menu-icon2"></button>
+          </section>
+      </div>
+
+      <div class="row">
+        <div id="read-panel" id="target">
+
+                <div class="padder">
+       <form id="myform">
+    <select id="fs">
+        <option value="Lato">Lato</option>
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana </option>
+        <option value="Helvetica">Helvetica</option>
+
+    </select>
+
+    <select id="size">
+        <option value="30">Normal</option>
+        <option value="40">Biggie-Smalls</option>
+        <option value="50">Large</option>
+        <option value="60">Phat</option>
+        <option value="70">Massive</option>
+    </select>
+</form>
+
+
+
+                <h4 class="btn-chapter-title changeMe"><%= @sections.first.section_title %></h4>
+
+                <h2 class="changeMe"><%= @sections.first.pages %></h2>
+
+
+                <div class="marketing">
+                <h3 class="bottomer">Are you enjoying this?<br/>Support a Creative</h3>
+                <a href="<%= @chapter.book_url %>" class="btn-signup_reading">BUY THE BOOK</a>
+               </div>
+
+      </div>
+    </div>
+
+</body>
+
+<script>
+
+
+$("#fs").change(function() {
+    //alert($(this).val());
+    $('.changeMe').css("font-family", $(this).val());
+
+});
+
+$("#size").change(function() {
+    $('.changeMe').css("font-size", $(this).val() + "px");
+});
+
+
+</script>
+
+
+

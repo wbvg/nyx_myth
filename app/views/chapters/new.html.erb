@@ -1,0 +1,50 @@
+<div id="chapter-container">
+  <div class="row">
+    <div class="col-marg topper">
+
+      <div class="new_chapter">
+        <% if current_user.is_admin? %>
+        <ul>
+
+
+        <%= form_for @chapter do |f| %>
+<br />
+              <li><%= f.text_field :title, :autofocus => true, placeholder: 'ENTER CHAPTER TITLE' %></li>
+              <br />
+              <li><%= f.text_field :book_url, placeholder: 'PASTE YOUR BUY A BOOK URL' %></li>
+              <br />
+       <li><h2><%= f.label 'Daily Released Sections' %></h2></li>
+              <li><%= f.fields_for :sections do |builder| %></li>
+                <%=render "section_fields", :f => builder %>
+                 <%end %>
+
+ <!--        <div id="addsection">
+        <!%#=  link_to_add_section "Add Section",f, :sections,"add_section" %>
+      </div> -->
+
+      <h3><%= link_to_add_fields "Add Section", f, :sections %></h3>
+
+                    <%= f.submit "Submit", :class => 'btn-signup2' %>
+        <% end %>
+      </ul>
+      <% else %>
+      <h3>This is secret Admin area! <%= link_to "Roll eyes and Head on Back", :back %></h3>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

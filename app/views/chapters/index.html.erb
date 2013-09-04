@@ -1,0 +1,21 @@
+<div id="chapter_container">
+  <div class="row topper">
+
+    <div class="col-lg-6 ">
+      <ul>
+        <h2 class="bottomer">Chapter List</h2>
+        <% @chapters.each do |chapter| %>
+              <li class="bottomer"><%= link_to(chapter.title, chapter, :class => "btn-signin") %>        By <%= chapter.user.username %>   |   <%= time_ago_in_words(chapter.created_at)  +  " ago" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <div class="col-lg-6">
+      <% if current_user.is_admin? %>
+      <%= link_to('Create a Chapter', new_chapter_path, :class => 'btn-signin') %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

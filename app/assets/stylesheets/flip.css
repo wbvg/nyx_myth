@@ -1,0 +1,308 @@
+div.wrapper {
+    margin: -12px auto;
+    text-align:center;
+    font:12px Arial, Helvetica, sans-serif;
+    color:#000; background:#222;
+    -webkit-font-smoothing:antialiased;
+    -moz-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper{
+/*  height: 300px;*/
+  margin: 50px auto;
+}
+
+.background{
+    position: relative top;
+    width: 100%;
+/*    height: 100%;*/
+    margin: 0 auto;
+    background: url(../images/beach_mist.jpg) top center;
+}
+
+.widget{
+  position:relative;
+  width:100%;
+  height: 400px;
+
+    top:0;bottom:0;right:0;left:0;
+}
+
+.leftside,
+.rightside{
+ /*   float: left;*/
+    position: relative;
+    width: 100%;
+    height: 400px;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+}
+.front {
+    padding:80px 0;
+    position: relative;
+    top: 0px;
+    z-index: 900;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.rightside .front{
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height: 34px;
+    background: #fff;
+    color: #000;
+}
+
+.leftside .front{
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    background: #303030;
+    color: #fff;
+}
+
+.flipl .front {
+    z-index: 900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+.flipr .front {
+    z-index: 900;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+}
+.back {
+    margin: 60px auto;
+    position: absolute;
+    top: 0;
+    z-index: 800;
+    width: inherit;
+    height: inherit;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.back i{
+    width: 300px;
+    height: 72px;
+    float: center;
+}
+.leftside .back{
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+/*    background: url(http://i.imgur.com/4agSxDW.png) no-repeat center;*/
+}
+
+.infos{
+    margin: 0 auto;
+    list-style: none;
+    position: relative;
+    padding: 40px 50px;
+}
+.infos li{
+    position: relative;
+    width: 100%;
+    height:34px;
+}
+.infos i{
+    float: center;
+    display:block;
+    width: 25px;
+    height:34px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.infos span{
+    color:#777;
+    padding-left:10px;
+    float: center;
+    height: 34px;
+    display: block;
+}
+.infos .spacer{
+    position: absolute;
+    width: 150px;
+    height: 1px;
+    margin: auto;
+    top:0;bottom:0;right:0;left:0;
+    background-color: #000;
+}
+.sun{
+    background: url(http://i.imgur.com/QgU8Ht6.png) no-repeat center;
+}
+
+.time{
+    position: absolute;
+    width: 120px;
+    height:50px;
+    margin: auto;
+    top:0;bottom:0;right:0;left:0;
+}
+
+.time-cont{
+    color:#00FF8E;
+    font-size: 2em;
+    position: relative;
+    width: 50px;
+    margin: 10px 20px;
+}
+
+.current_date{
+    position: relative;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin: 5px 10px;
+    width: 90px;
+}
+.settings-cont{
+    position:absolute;
+    width: 100%;
+/*    bottom: 20px;*/
+}
+.settings{
+}
+.settings:hover{
+}
+.return {
+    color: #fff;
+z-index: 99;
+font-family: 'Montserrat', sans-serif;
+font-size: 2em;
+right: 10px;
+top: 10px;
+height: 51px;
+width: 300px;
+padding: 10px;
+background-color: #ed6433;
+border-radius: 6px;
+margin: 20px auto;
+}
+.return:hover {
+  background-color:#edb7a9;
+
+}
+
+
+/*.username{
+    background: url(http://i.imgur.com/eSPIdoy.png) no-repeat center;
+}
+.password{
+    background: url(http://i.imgur.com/dKHpaR1.png) no-repeat center;
+}*/
+.ribbon-cont{
+    position: relative;
+    width: 100%;
+}
+.ribbon{
+    position: relative;
+    width: 23px;
+    height: 50px;
+    margin: 0 auto;
+    background: url(http://i.imgur.com/cYR9Wss.png) no-repeat;
+}
+.wunderlog{
+    position: relative;
+    padding: 40px 0 0 0;
+}
+.inputwrapper{
+    position: relative;
+    width: 150px;
+    height: 32px;
+    background-color: #fff;
+    margin: 0 auto 30px auto;
+}
+.wunderlog .inputwrapper{
+    border:1px solid #fff;
+}
+.active{
+/*    border:1px solid #777;*/
+}
+.wunderlog input{
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 16px;
+    height:16px;
+    margin: 0;
+    outline: none;
+    float: left;
+    padding: 8px;
+    width: 104px;
+}
+.rightside .back{
+    background: #fff;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    margin-top: 200px;
+}
+.location{
+     background: url(http://i.imgur.com/XpYSAB5.png) no-repeat center;
+}
+.alarm{
+     background: url(http://i.imgur.com/awYPmhl.png) no-repeat center;
+}
+.todo{
+    position: relative;
+    padding: 90px 0 0 0;
+}
+.todo .inputwrapper{
+    border:1px solid #e6e6e6;
+}
+.todo input{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 8px;
+    float: center;
+    border:none;
+    line-height: 16px;
+    height:16px;
+    outline: none;
+    display: block;
+    position: relative;
+    width: 104px;
+}
+.flipl .back {
+    z-index: 1000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+}
+.flipr .back {
+    z-index: 1000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+}
+/*::-webkit-input-placeholder {
+    font-style: italic;
+    font-family: arial;
+}
+:-moz-placeholder {
+    font-style: italic;
+    font-family: arial;
+}
+::-moz-placeholder {
+    font-style: italic;
+    font-family: arial;
+}
+:-ms-input-placeholder {
+    font-style: italic;
+    font-family: arial;
+}*/
