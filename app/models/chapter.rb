@@ -14,7 +14,9 @@ class Chapter < ActiveRecord::Base
 
   attr_accessible :title, :user_id, :book_url, :sections_attributes
   has_many :sections, :dependent => :destroy
+
   accepts_nested_attributes_for :sections
+
   belongs_to :user
 
 end

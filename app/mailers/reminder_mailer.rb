@@ -11,7 +11,7 @@ class ReminderMailer < ActionMailer::Base
   end
 end
 
-
+# // Older email from DT's class
 #   def welcome_email(user)
 #     @user = user
 #     @url  = 'http://example.com/login'

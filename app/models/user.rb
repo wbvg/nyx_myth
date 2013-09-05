@@ -45,11 +45,4 @@ class User < ActiveRecord::Base
     user.avatar if user
   end
 
-def send_email
-
-
-
-end
-
-
 end

@@ -21,45 +21,46 @@
 
     <div id="changeMe" class="">
           <div class="btn-chapter-title h2"><%= @section.section_title %></div>
-                    <h2><%= raw( @section.pages) %></h2>heeeloo
+          <h2><%= raw( @section.pages) %></h2>
     </div>
 
-            <div id="disqus_thread"></div>
-                <script type="text/javascript">
-                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                    var disqus_shortname = 'nyxmythchapter'; // required: replace example with your forum shortname
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'nyxmythchapter'; // required: replace example with your forum shortname
 
-                    /* * * DON'T EDIT BELOW THIS LINE * * */
-                    (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-            <script type="text/javascript">
-                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                var disqus_shortname = 'nyxmythchapter'; // required: replace example with your forum shortname
-
-                /* * * DON'T EDIT BELOW THIS LINE * * */
-                (function () {
-                    var s = document.createElement('script'); s.async = true;
-                    s.type = 'text/javascript';
-                    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                }());
-                </script>
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 
-          <div class="marketing">
-            <h3 class="bottomer">Are you enjoying this?<br/>Support a Creative</h3>
-            <a href="<%= @section.chapter.book_url %>" class="btn-signup_reading">BUY THE BOOK</a>
-         </div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'nyxmythchapter'; // required: replace example with your forum shortname
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function () {
+              var s = document.createElement('script'); s.async = true;
+              s.type = 'text/javascript';
+              s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+              (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+          }());
+          </script>
+
+
+
+       <div class="marketing bottomer">
+          <h3 class="bottomer">Are you enjoying this?<br/>Support a Creative</h3>
+          <a href="<%= @section.chapter.book_url %>" class="btn-signup_reading">BUY THE BOOK</a>
+       </div>
+
   </div>
 </div>
 
@@ -68,12 +69,10 @@
 $("#fs").change(function() {
     //alert($(this).val());
     $('div.changeMe *').css("font-family", $(this).val());
-
 });
 
 $("#size").change(function() {
     $('div.changeMe * ').css("font-size", $(this).val() + "px");
-
 });
 </script>
 

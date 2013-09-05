@@ -1,14 +1,8 @@
 <div class="col-lg-12 clown">
   <li><%= f.label :section_title, 'Section Title' %></li>
-<li><%= f.text_area :section_title, :rows => 2 , placeholder: 'SECTION TITLE' %></li>
-<br />
-<li><%= f.text_area :pages, :class => 'growfield', placeholder: 'CONTENT (Try keeping to Max. 500 words'  %></li>
-
-<h3><%= link_to_remove_fields "remove", f  %></h3>
-
-
-
-
+  <li><%= f.text_area :section_title, :rows => 2 , placeholder: 'SECTION TITLE' %></li><br />
+  <li><%= f.text_area :pages, :class => 'growfield', placeholder: 'CONTENT (Try keeping to Max. 500 words'  %></li>
+  <h3><%= link_to_remove_fields "remove", f  %></h3>
 </div>
 
 

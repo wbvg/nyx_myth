@@ -26,9 +26,4 @@ class ApplicationController < ActionController::Base
     user.avatar if user
   end
 
-
-  # def is_admin?
-  #   # user.is_admin? = true
-  # end
-
 end

@@ -27,6 +27,7 @@ require File.expand_path('../../config/environment',  __FILE__)
 
 # every(14.day, 'Queueing scheduled job', :at => '14:17') { Delayed::Job.enqueue ScheduledJob.new }
 
+#how to run clock.rb from lib directory - clockwork clock.rb
 every(14.day, 'reminders.send') do
 
   User.all.each do |u|
@@ -55,7 +56,6 @@ end
 end
 
 
- #how to run clock.rb from lib directory - clockwork clock.rb
 # every(1.day, 'reminder.deliver') {
 
 #   # what object is reminders

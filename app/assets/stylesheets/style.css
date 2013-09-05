@@ -1,25 +1,92 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
 /*==== Contents ====*/
+    /*====      ====*/
 
 /*[1] Global */
 /*[2] Header Nav */
-/*[3] Global */
-/*[4] Global */
-/*[5] Global */
-
+/*[3] Spacers & Containers */
+/*[4] Text menu */
+/*[5] Sign In Form */
 
 
 /*==== [1] Global ====*/
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
-
 .about-img {
   width: 100%;
 }
-/*== [2] Header Nav ==*/
+
+a {
+  color:#00FF8E;
+}
+
+p {
+  font-style: 1.8em;
+  line-height: 2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+h6 {
+  font-size: 1.4em;
+  font-weight: bold;
+  font-family: 'Lato' ,sans-serif;
+}
+
+textarea {
+  width: 100%;
+  padding: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+input::-moz-placeholder  {
+  height:100px;
+  width:100%;
+  color: #fff;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  padding: 10px;
+  background-color: #00FF8E;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #fff;
+}
+.centra {
+  margin: 0 auto;
+}
+
+#disqus_thread {
+  padding: 30px;
+  margin: 20px;
+}
+
+.border {
+ border: 10px solid #ccc;
+ margin: 5px;
+}
+
+#tweeter {
+ margin:5px  0  0 0;
+}
+
+*== [2] Header Nav ==*/
+
+div.navbar {
+/*max-height: 80px;*/
+}
 
 .menu-icon {
   background: url(../images/menu-icon.png);
@@ -35,13 +102,11 @@ body {
   display: block;
 }
 
-
 a:hover, a.brand:hover {
 /*  padding: 5px;*/
   color: #fff;
   background-color: #00FF8E;
 }
-
 
 .navbar-nav > li > a:focus {
   color:#fff;
@@ -59,7 +124,6 @@ a:hover, a.brand:hover {
 /*  font-weight: bold;
   font-size: 14px;*/
 }
-
 
 a.li:active {
   padding: 10px 13px 8px 13px;
@@ -81,6 +145,59 @@ padding: 20px;
   padding: 20px;
 }
 
+/*[3] Spacers & Containers */
+
+div.selection {
+  margin: 20px;
+  width:100%;
+  text-align: center;
+}
+
+#chapter-container, #chapter_container {
+  margin: 60px;
+}
+
+.line-heighter {
+  line-height: 2em;
+}
+
+#marginer {
+  margin: 0 40px;
+}
+
+.marginer {
+  max-width: 900px;
+  margin: 0 40px 0 40px;
+}
+
+.bottomer {
+  margin-bottom: 40px;
+}
+
+.marginer {
+  margin: 0 20px;
+}
+
+.odd{
+    background:#dedede;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.even{
+    background:#fff;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#chapter-container {
+  margin: 80px 20px;
+  width: 90%;
+}
+
+.padder {
+  margin: 0 10px;
+}
 
 /*==== Font Menu ====*/
 
@@ -96,64 +213,6 @@ margin-top: 10px;
 
 #size {
 margin-left: 10px;
-}
-
-p {
-
-  font-style: 1.8em;
-  line-height: 2em;
-  margin-bottom: 20px;
-}
-textarea {
-  width: 100%;
-  padding: 20px;
-}
-
-
-.bottomer {
-  margin-bottom: 40px;
-}
-
-.border {
- border: 10px solid #ccc;
- margin: 5px;
-}
-
-#tweeter {
- margin:5px  0  0 0;
-}
-
-.marginer {
-  margin: 0 20px;
-}
-
-h2 {
-font-family: "Lato", Helvetica, Arial, sans-serif;
-font-weight: 500;
-line-height: 1.1;
-}
-
-.odd{
-    background:#dedede;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-.even{
-    background:#fff;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-
-
-#chapter-container {
-  margin: 80px 20px;
-  width: 90%;
-}
-
-.padder {
-  margin: 0 10px;
 }
 
 .navbar {
@@ -179,7 +238,6 @@ label {
   margin-top: 51px;
 }
 
-
 button {
   border: none;
 }
@@ -201,10 +259,6 @@ ul li {
   list-style: none;
 }
 
-/*#new_user {
-  margin: 20px;
-}*/
-
 #error_explanation {
 width: 100% !important;
 clear: both;
@@ -217,7 +271,6 @@ color: #fff;
 .lefting {
   margin-left: -40px;
   cursor: pointer;
-
 }
 
 .col-marg {
@@ -230,7 +283,6 @@ color: #fff;
   background-color: #dddddd;
 }
 
-
 #read-panel {
 margin-bottom: 40px;
 }
@@ -240,6 +292,19 @@ div.padder {
   margin: 10px 20px 20px 20px;
   position: relative;
 }
+
+.marketing {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #c080e3;
+}
+
+.margin-spacer {
+  margin: 20px 0;
+}
+
+
+/*== Buttons ==*/
 
 .notice {
   margin: 10px 0 ;
@@ -259,8 +324,6 @@ div.padder {
   display: block;
 }
 
-
-
 .btn-signup_reading {
   color: #fff;
   position: relative;
@@ -277,19 +340,11 @@ div.padder {
 
 .btn-signup_reading:hover {
   background-color:#00FF8E;
-
-}
-
-.marketing {
-  margin-top: 40px;
-  padding: 30px;
-  background-color: #c080e3;
 }
 
 .btn-signup2 {
   color: #fff;
   position: relative;
-/*  float: center;*/
   font-family: 'Montserrat', sans-serif;
   font-size: 2em;
   padding: 10px;
@@ -299,30 +354,15 @@ div.padder {
   margin: 0 auto;
   border: none;
 }
-.margin-spacer {
-  margin: 20px 0;
-}
+
 .btn-signup:hover {
   background-color:#edb7a9;
-
 }
 
 .btn-signup2:hover {
   background-color:#eb8cfa;
-
 }
 
-
-
-h6 {
-  font-size: 1.4em;
-  font-weight: bold;
-  font-family: 'Lato' ,sans-serif;
-}
-
-
-
-/*== Buttons ==*/
 
 .btn-signin, .btn-edit, .btn-delete {
   color: #fff;
@@ -457,10 +497,11 @@ margin-left: 120px;
   margin: 20px 0 0 0;
 }
 
-a {
-  color:#00FF8E;
+div.center {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
 }
-
 
 div.menu_container {
 width: 90%;
@@ -478,8 +519,7 @@ margin: 0 auto;
   font-size: 14px;*/
   }
 
-/*== Sign In Form ==*/
-
+/*== [5] Sign In Form ==*/
 
 .sign_in_form {
 margin-top: 30px;
@@ -489,11 +529,9 @@ margin-top: 30px;
   height: 60px;
 }
 
-
 .raiders {
   color: #fff;
 }
-
 
 ::-webkit-input-placeholder {
    color: white;
@@ -516,12 +554,6 @@ input#user_avatar {
   padding: 20px;
 }
 
-div.center {
-  margin: 0 auto;
-  text-align: center;
-  width: 300px;
-}
-
 input:focus {
   height:100px;
   width:100%;
@@ -533,10 +565,6 @@ input:focus {
   background-color: #edb7a9;
   margin: 0 auto;
   text-align: center;
-}
-
-li {
-  list-style: none;
 }
 
 input  {
@@ -552,54 +580,4 @@ input  {
   text-align: center;
   border: 2px solid #fff;
   text-align: center;
-}
-
-div.navbar {
-/*max-height: 80px;*/
-}
-
-input::-moz-placeholder  {
-  height:100px;
-  width:100%;
-  color: #fff;
-  position: relative;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2em;
-  padding: 10px;
-  background-color: #00FF8E;
-  margin: 0 auto;
-  text-align: center;
-  border: 2px solid #fff;
-}
-
-div.selection {
-  margin: 20px;
-  width:100%;
-  text-align: center;
-}
-
-#chapter-container, #chapter_container {
-  margin: 60px;
-}
-
-.line-heighter {
-  line-height: 2em;
-}
-
-#marginer {
-  margin: 0 40px;
-}
-
-.marginer {
-  max-width: 900px;
-  margin: 0 40px 0 40px;
-}
-
-.centra {
-  margin: 0 auto;
-}
-
-#disqus_thread {
-  padding: 30px;
-  margin: 20px;
 }

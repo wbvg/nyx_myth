@@ -5,22 +5,18 @@
      <% if current_user.is_admin? %>
           <% @users.each do |user| %>
            <ul class="bottomer topper <%= cycle("even", "odd") %>">
-          <li>
-        <%= link_to(user.username, user, :class => "btn-signin") %></li><li><h6><%= user.email %>   </h6></span><span class="padder"> <h6>Birthday | <span class="padder"><a><%= user.gender %></a></h6><%= user.birthday %> </span>
-        <h6>Read Timer</h6><%= user.timer %></li>
-        <li>
+              <li>
+              <%= link_to(user.username, user, :class => "btn-signin") %></li><li><h6><%= user.email %>
+              </h6></span><span class="padder"> <h6>Birthday | <span class="padder"><a><%= user.gender %></a></h6><%= user.birthday %> </span>
+              <h6>Read Timer</h6><%= user.timer %></li>
+              <li>
 
-<%= link_to 'Delete', user, :method => :delete, :class => 'btn btn-danger' , :data => { :confirm => "Are you sure?" } %>    <a href="mailto:<%= user.email %>" class="btn btn-warning">Email User</a></li>
-</ul>
+              <%= link_to 'Delete', user, :method => :delete, :class => 'btn btn-danger' , :data => { :confirm => "Are you sure?" } %>    <a href="mailto:<%= user.email %>" class="btn btn-warning">Email User</a></li>
+            </ul>
+          <% end %>
+    <% end %>
 
-
-
-
-            <% end %>
-
-      <% end %>
-
-      </ul>
+          </ul>
       </div>
     </div>
   </div>

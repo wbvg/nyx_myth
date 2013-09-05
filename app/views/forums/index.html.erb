@@ -7,53 +7,29 @@
         <% @chapters.each do |chapter| %>
               <li class="bottomer"><span class="btn-signup2"><%= chapter.title%></span>        By <%= chapter.user.username %>   |   <%= time_ago_in_words(chapter.created_at)  +  " ago" %></li>
 
-
-                <!--   // Play around with comment counter
-
-                <li> <a href="http://foo.com/bar.html#disqus_thread">Link</a></li> -->
-
-
-          <% chapter.sections.each do |section| %>
-
-<a href="http://example.com/article1.html#disqus_thread"
-   data-disqus-identifier="<%=@article.id%>">
-This will be replaced by the comment count
-</a>
-
-# Rails helper
-<%= link_to "This will be replaced by the comment count",
-    article_path(@article, :anchor => "disqus_thread"),
-    :"data-disqus-identifer" => @article.id %>
-
-
-
-                      <li class="bottomer"><%= link_to(section.section_title, [chapter, section]raw("#{#disqus_thread}"), :class => "btn-signin") %><span class="padder"><%=   %></span></li>
-                      <% end %>
-
-            <!--<li class="lefting"><a href="#" data-id="<!%= section.id %>"><!%#= section.section_title %></a></li> -->
-
+                  <% chapter.sections.each do |section| %>
+                      <li class="bottomer"><%= link_to(section.section_title, [chapter, section], :class => "btn-signin") %><span class="padder"><%=   %></span></li>
+                  <% end %>
         <% end %>
       </ul>
     </div>
 
-
     <div class="col-lg-6">
-
     </div>
 
   </div>
 </div>
 
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'nyxmythchapter'; // required: replace example with your forum shortname
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'nyxmythchapter'; // required: replace example with your forum shortname
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-    </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
 

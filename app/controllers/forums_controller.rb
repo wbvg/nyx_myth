@@ -3,8 +3,8 @@ class ForumsController < ApplicationController
     @users = User.all
     @chapters = Chapter.all
 
-    # days = (Time.new - current_user.created_at).to_i / (1 * 1 * 24)
-    # @sections = @chapter.sections.limit(days)
+    days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
+    @sections = @chapter.sections.limit(days)
 
   end
 
@@ -14,7 +14,7 @@ class ForumsController < ApplicationController
     @chapter = Chapter.find(params[:id])
 
     # Section Limiter - This only allows users to read sections released to them each day
-    days = (Time.new - current_user.created_at).to_i / (1 * 1 * 24)
+    days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
     @sections = @chapter.sections.limit(days)
   end
 

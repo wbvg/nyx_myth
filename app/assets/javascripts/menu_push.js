@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
       var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
         menuRight = document.getElementById( 'cbp-spmenu-s2' ),
         // showLeft = document.getElementById( 'showLeft' ),
@@ -37,7 +36,6 @@ $(document).ready(function(){
       };
 
 var load = $(showRightPush).trigger('click');
-
 
       function disableOther( button ) {
         // if( button !== 'showLeft' ) {

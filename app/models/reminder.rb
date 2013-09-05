@@ -1,10 +1,10 @@
+#unused table - for Delayed Jobs
 class CreateReminders < ActiveRecord::Migration
   def self.up
     create_table :reminders do |t|
       t.integer :event_id
       t.datetime :reminder_at
       t.timestamps
-
     end
   end
 
