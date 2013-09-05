@@ -19,10 +19,10 @@
           </form>
 
 
-<div id="changeMe" class="">
-      <div class="btn-chapter-title h2"><%= @section.section_title %></div>
-                <h2><%= raw( @section.pages) %></h2>heeeloo
-</div>
+    <div id="changeMe" class="">
+          <div class="btn-chapter-title h2"><%= @section.section_title %></div>
+                    <h2><%= raw( @section.pages) %></h2>heeeloo
+    </div>
 
             <div id="disqus_thread"></div>
                 <script type="text/javascript">
@@ -56,14 +56,13 @@
 
 
 
-    <div class="marketing">
-    <h3 class="bottomer">Are you enjoying this?<br/>Support a Creative</h3>
-
-    <a href="<%= @section.chapter.book_url %>" class="btn-signup_reading">BUY THE BOOK</a>
-
-   </div>
+          <div class="marketing">
+            <h3 class="bottomer">Are you enjoying this?<br/>Support a Creative</h3>
+            <a href="<%= @section.chapter.book_url %>" class="btn-signup_reading">BUY THE BOOK</a>
+         </div>
   </div>
 </div>
+
 
 <script>
 $("#fs").change(function() {
@@ -76,7 +75,6 @@ $("#size").change(function() {
     $('div.changeMe * ').css("font-size", $(this).val() + "px");
 
 });
-
 </script>
 
 
