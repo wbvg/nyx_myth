@@ -19,29 +19,30 @@
         <div id="read-panel" id="target">
 
                 <div class="padder">
-       <form id="myform">
-    <select id="fs">
-        <option value="Lato">Lato</option>
-        <option value="Arial">Arial</option>
-        <option value="Verdana">Verdana </option>
-        <option value="Helvetica">Helvetica</option>
-
-    </select>
-
-    <select id="size">
-        <option value="30">Normal</option>
-        <option value="40">Biggie-Smalls</option>
-        <option value="50">Large</option>
-        <option value="60">Phat</option>
-        <option value="70">Massive</option>
-    </select>
-</form>
 
 
+             <form id="myform">
+              <select id="fs">
+                  <option value="Lato">Lato</option>
+                  <option value="Arial">Arial</option>
+                  <option value="Verdana">Verdana </option>
+                  <option value="Helvetica">Helvetica</option>
 
-                <h4 class="btn-chapter-title changeMe"><%= @sections.first.section_title %></h4>
+              </select>
 
-                <h2 class="changeMe"><%= @sections.first.pages %></h2>
+              <select id="size">
+                  <option value="40">Biggie-Smalls</option>
+                  <option value="50">Large</option>
+                  <option value="60">Phat</option>
+                  <option value="70">Massive</option>
+              </select>
+          </form>
+
+          <div id="changeMe" class="">
+                <div class="btn-chapter-title h2"><%= @sections.first.section_title %></div>
+
+                <h2><%= raw( @sections.first.pages) %></h2>
+          </div>
 
 
                 <div class="marketing">
@@ -51,24 +52,10 @@
 
       </div>
     </div>
+  </div>
+
 
 </body>
-
-<script>
-
-
-$("#fs").change(function() {
-    //alert($(this).val());
-    $('.changeMe').css("font-family", $(this).val());
-
-});
-
-$("#size").change(function() {
-    $('.changeMe').css("font-size", $(this).val() + "px");
-});
-
-
-</script>
 
 
 

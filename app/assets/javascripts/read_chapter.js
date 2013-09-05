@@ -14,7 +14,13 @@ $(document).ready(function () {
       data: {
         chapter_id: chapter_id
       }
+    }).error(function () {
+      console.log(arguments);
+      if (window.location.hash === '#debug') {
+        debugger;
+      }
     }).done(function (entries) {
+      console.log('got yo entries', entries)
       var last_id = $('nav ul li:last a').data('id') || 0;
       $.each(entries, function (i, e) {
         if (e.id <= last_id) {
@@ -26,10 +32,9 @@ $(document).ready(function () {
         $title.wrap('<li class="lefting">');
         $title.attr('data-id', e.id);
 
-        console.log($title, e, e.id);
+        // console.log($title, e, e.id);
       });
-    }).error(function (a, i, d, s) {
-      console.log(a, i, d, s);
+
     });
 
   }, 6000);

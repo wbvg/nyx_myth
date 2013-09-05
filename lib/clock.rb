@@ -3,38 +3,41 @@ include Clockwork
 require File.expand_path('../../config/boot',  __FILE__)
 require File.expand_path('../../config/environment',  __FILE__)
 
-Clockwork.configure do |config|
-  config[:sleep_timeout] = 5
-  config[:logger] = Logger.new(log_file_path)
-  config[:tz] = 'User.time_zone'
-  config[:max_threads] = 15
-end
-
-
-# handler do |job|
-#   puts "Running #{job}"
+# Clockwork.configure do |config|
+#   config[:sleep_timeout] = 5
+#   config[:logger] = Logger.new(log_file_path)
+#   config[:tz] = 'User.time_zone'
+#   config[:max_threads] = 15
 # end
 
-reminders = Reminder.find(:all, :conditions => ["reminder_at <= ? and reminder_at > ?", Time.now.advance(:minutes => 2), Time.now])
-#reminders = Reminder.find(:all, :conditions => ["reminder_at <= ?", #Time.now.advance(:minutes => 2)])
-unless reminders.nil?
-UserMailer.send_later( :deliver_event_reminder, reminders )
-end
-}
 
-every 24.hour, at: 6 do
- runner 'Delayed::Job.enqueue(DelayedRake.new("contact:new"),priority:1,run_at: Time.now)'
-end
+# # handler do |job|
+# #   puts "Running #{job}"
+# # end
 
+# reminders = Reminder.find(:all, :conditions => ["reminder_at <= ? and reminder_at > ?", Time.now.advance(:minutes => 2), Time.now])
+# #reminders = Reminder.find(:all, :conditions => ["reminder_at <= ?", #Time.now.advance(:minutes => 2)])
+# unless reminders.nil?
+# UserMailer.send_later( :deliver_event_reminder, reminders )
+# end
+# }
+
+# every 24.hour, at: 6 do
+#  runner 'Delayed::Job.enqueue(DelayedRake.new("contact:new"),priority:1,run_at: Time.now)'
+# end
+
+# every(14.day, 'Queueing scheduled job', :at => '14:17') { Delayed::Job.enqueue ScheduledJob.new }
 
 
 every(14.day, 'reminders.send') do
   User.all.each do |u|
-
-    if u.timer && u.time_zone == Time.now
+    ('**:**') = timer
+    if u.time_zone == Time.now
+      reminders = User.find(:all, :conditions => ["timer <= ?", Time.now], at: => '**:**')
+      u.timer &&
 
   #   # what object is reminders
-# reminders = User.find(:all, :conditions => ["timer <= ?", Time.now])
+#
 # unless reminders.nil?
 #   reminders.each do |i|
 #     user.delay.send_email

@@ -8,10 +8,11 @@ def index
     @chapters = Chapter.all
     @users = User.all
     @chapter = Chapter.find(params[:id])
+
      days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
      # days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
     #@sections = Section.where('timer > ? AND timer < ?' , 1.day.ago.change(:hour => 24), Time.now.change(:hour => 24))
-    @sections = @chapter.sections.limit(days + 1)
+    @sections = @chapter.sections.limit(days)
 
 
   end
@@ -40,11 +41,6 @@ def index
     chapter = Chapter.find(params[:id])
     chapter.update_attributes(params[:chapter])
     redirect_to(chapter_path)
-
-
-    render :json => @sections
-
-
   end
 
   def destroy

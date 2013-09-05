@@ -6,6 +6,12 @@
         <h2 class="bottomer">Chapter List</h2>
         <% @chapters.each do |chapter| %>
               <li class="bottomer"><%= link_to(chapter.title, chapter, :class => "btn-signin") %>        By <%= chapter.user.username %>   |   <%= time_ago_in_words(chapter.created_at)  +  " ago" %></li>
+
+          <% if current_user.is_admin? %>
+            <li><%= link_to 'Edit', edit_chapter_path(chapter), :method => :get, :class => 'btn-signin' %>
+            <%= link_to 'Delete', status, :method => :delete, :class => 'btn-signin' %></li>
+          <% end %>
+
         <% end %>
       </ul>
     </div>

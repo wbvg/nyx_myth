@@ -17,7 +17,4 @@ class Chapter < ActiveRecord::Base
   accepts_nested_attributes_for :sections
   belongs_to :user
 
-
-
-
 end

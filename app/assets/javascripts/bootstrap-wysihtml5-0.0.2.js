@@ -1,6 +1,6 @@
 !function($, wysi) {
 	"use strict"
-	
+
 	var templates = {
 		"font-styles": "<li class='dropdown'>" +
 							"<a class='btn dropdown-toggle' data-toggle='dropdown' href='#'>" +
@@ -13,23 +13,23 @@
 						    "</ul>" +
 						"</li>",
 		"emphasis":     "<li>" +
-							"<div class='btn-group'>" 
-							    + "<a class='btn' data-wysihtml5-command='bold' title='CTRL+B'>Bold</a>" 
-							    + "<a class='btn' data-wysihtml5-command='italic' title='CTRL+I'>Italic</a>" 
-							    //,+ "<a class='btn' data-wysihtml5-command='underline' title='CTRL+U'>Underline</a>" 
-							+ "</div>" 
+							"<div class='btn-group'>"
+							    + "<a class='btn' data-wysihtml5-command='bold' title='CTRL+B'>Bold</a>"
+							    + "<a class='btn' data-wysihtml5-command='italic' title='CTRL+I'>Italic</a>"
+							    //,+ "<a class='btn' data-wysihtml5-command='underline' title='CTRL+U'>Underline</a>"
+							+ "</div>"
 						+ "</li>",
-		"lists": 	"<li>" 
-						+ "<div class='btn-group'>" 
-					    	+ "<a class='btn' data-wysihtml5-command='insertUnorderedList' title='Unordered List'><i class='icon-list'></i></a>" 
-						    + "<a class='btn' data-wysihtml5-command='insertOrderedList' title='Ordered List'><i class='icon-th-list'></i></a>" 
-						    + "<a class='btn' data-wysihtml5-command='Outdent' title='Outdent'><i class='icon-indent-right'></i></a>"  							    
-						    + "<a class='btn' data-wysihtml5-command='Indent' title='Indent'><i class='icon-indent-left'></i></a>" 
-						+ "</div>" 
+		"lists": 	"<li>"
+						+ "<div class='btn-group'>"
+					    	+ "<a class='btn' data-wysihtml5-command='insertUnorderedList' title='Unordered List'><i class='icon-list'></i></a>"
+						    + "<a class='btn' data-wysihtml5-command='insertOrderedList' title='Ordered List'><i class='icon-th-list'></i></a>"
+						    + "<a class='btn' data-wysihtml5-command='Outdent' title='Outdent'><i class='icon-indent-right'></i></a>"
+						    + "<a class='btn' data-wysihtml5-command='Indent' title='Indent'><i class='icon-indent-left'></i></a>"
+						+ "</div>"
 					+ "</li>",
 
-		"link": 	"<li>" 
-						
+		"link": 	"<li>"
+
 						+ "<div class='bootstrap-wysihtml5-insert-link-modal modal hide fade'>"
 							+ "<div class='modal-header'>"
 							+ "<a class='close' data-dismiss='modal'>×</a>"
@@ -44,12 +44,12 @@
 							+ "</div>"
 						+ "</div>"
 
-				    	+ "<a class='btn' data-wysihtml5-command='createLink' title='Link'><i class='icon-share'></i></a>" 
+				    	+ "<a class='btn' data-wysihtml5-command='createLink' title='Link'><i class='icon-share'></i></a>"
 
 					+ "</li>",
 
-			"image": "<li>" 
-						
+			"image": "<li>"
+
 						+ "<div class='bootstrap-wysihtml5-insert-image-modal modal hide fade'>"
 							+ "<div class='modal-header'>"
 							+ "<a class='close' data-dismiss='modal'>×</a>"
@@ -64,18 +64,18 @@
 							+ "</div>"
 						+ "</div>"
 
-						+ "<a class='btn' data-wysihtml5-command='insertImage' title='Insert image'><i class='icon-picture'></i></a>" 
+						+ "<a class='btn' data-wysihtml5-command='insertImage' title='Insert image'><i class='icon-picture'></i></a>"
 
 					+ "</li>",
 
-		"html": 
+		"html":
 						"<li>"
 							+ "<div class='btn-group'>"
-								+ "<a class='btn' data-wysihtml5-action='change_view' title='Edit HTML'><i class='icon-pencil'></i></a>" 
+								+ "<a class='btn' data-wysihtml5-action='change_view' title='Edit HTML'><i class='icon-pencil'></i></a>"
 							+ "</div>"
 						+ "</li>"
 	};
-	
+
 	var defaultOptions = {
 		"font-styles": true,
 		"emphasis": true,
@@ -86,6 +86,7 @@
 		events: {},
 		parserRules: {
 			tags: {
+				"p": {},
 				"b":  {},
 				"i":  {},
 				"br": {},
@@ -120,7 +121,7 @@
 		this.el = el;
 		this.toolbar = this.createToolbar(el, options || defaultOptions);
 		this.editor =  this.createEditor(options);
-		
+
 		window.editor = this.editor;
 
   		$('iframe.wysihtml5-sandbox').each(function(i, el){
@@ -136,12 +137,12 @@
 		constructor: Wysihtml5,
 
 		createEditor: function(options) {
-			var parserRules = defaultOptions.parserRules; 
+			var parserRules = defaultOptions.parserRules;
 
 			if(options && options.parserRules) {
 				parserRules = options.parserRules;
 			}
-				
+
 			var editor = new wysi.Editor(this.el.attr('id'), {
 	    		toolbar: this.toolbar.attr('id'),
 				parserRules: parserRules
@@ -151,11 +152,11 @@
 				for(var eventName in options.events) {
 					editor.on(eventName, options.events[eventName]);
 				}
-			}	
+			}
 
 	  		return editor;
 		},
-		
+
 		createToolbar: function(el, options) {
 			var self = this;
 			var toolbar = $("<ul/>", {
@@ -166,7 +167,7 @@
 
 			for(var key in defaultOptions) {
 				var value = false;
-				
+
 				if(options[key] != undefined) {
 					if(options[key] == true) {
 						value = true;
@@ -174,7 +175,7 @@
 				} else {
 					value = defaultOptions[key];
 				}
-				
+
 				if(value == true) {
 					toolbar.append(templates[key]);
 
@@ -191,16 +192,16 @@
 					}
 				}
 			}
-			
+
 			var self = this;
-			
+
 			toolbar.find("a[data-wysihtml5-command='formatBlock']").click(function(e) {
 				var el = $(e.srcElement);
 				self.toolbar.find('.current-font').text(el.html())
 			});
-			
+
 			this.el.before(toolbar);
-			
+
 			return toolbar;
 		},
 
@@ -218,12 +219,12 @@
 			var insertButton = insertImageModal.find('a.btn-primary');
 			var initialValue = urlInput.val();
 
-			var insertImage = function() { 
+			var insertImage = function() {
 				var url = urlInput.val();
 				urlInput.val(initialValue);
 				self.editor.composer.commands.exec("insertImage", url);
 			};
-			
+
 			urlInput.keypress(function(e) {
 				if(e.which == 13) {
 					insertImage();
@@ -237,7 +238,7 @@
 				urlInput.focus();
 			});
 
-			insertImageModal.on('hide', function() { 
+			insertImageModal.on('hide', function() {
 				self.editor.currentView.element.focus();
 			});
 
@@ -253,13 +254,13 @@
 			var insertButton = insertLinkModal.find('a.btn-primary');
 			var initialValue = urlInput.val();
 
-			var insertLink = function() { 
+			var insertLink = function() {
 				var url = urlInput.val();
 				urlInput.val(initialValue);
-				self.editor.composer.commands.exec("createLink", { 
-					href: url, 
-					target: "_blank", 
-					rel: "nofollow" 
+				self.editor.composer.commands.exec("createLink", {
+					href: url,
+					target: "_blank",
+					rel: "nofollow"
 				});
 			};
 			var pressedEnter = false;
@@ -277,7 +278,7 @@
 				urlInput.focus();
 			});
 
-			insertLinkModal.on('hide', function() { 
+			insertLinkModal.on('hide', function() {
 				self.editor.currentView.element.focus();
 			});
 
