@@ -37,4 +37,5 @@
  //= require bootstrap-wysihtml5
  //= require bootstrap-wysihtml5/locales
  //= require font_size
+ //= require bootstrap_active
 //= require_tree .

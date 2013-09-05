@@ -12,7 +12,8 @@ $(document).ready(function () {
       dataType: 'json',
       method: 'get',
       data: {
-        chapter_id: chapter_id
+        chapter_id: chapter_id,
+        t: Math.random()
       }
     }).error(function () {
       console.log(arguments);
@@ -21,9 +22,8 @@ $(document).ready(function () {
       }
     }).done(function (entries) {
       console.log('got yo entries', entries)
-      var last_id = $('nav ul li:last a').data('id') || 0;
       $.each(entries, function (i, e) {
-        if (e.id <= last_id) {
+        if ($('[data-id=' + e.id + ']').length) {
           return;
         }
 

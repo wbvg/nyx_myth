@@ -1,18 +1,26 @@
 <div id="chapter-container">
-  <div class="row">
-    <div class="col-lg-9 topper">
+  <div class="row topper">
+    <div class="col-lg-10">
 
-      <ul>
      <% if current_user.is_admin? %>
           <% @users.each do |user| %>
-                  <li class="bottomer"><%= link_to(user.username, user, :class => "btn-signin") %>        By <%= user.email %>   |   <%= user.gender %></li>
-                   <li class="bottomer">Birthday<%= user.birthday %>        By <%= user.timer %></li>
+           <ul class="bottomer topper <%= cycle("even", "odd") %>">
+          <li>
+        <%= link_to(user.username, user, :class => "btn-signin") %></li><li><h6><%= user.email %>   </h6></span><span class="padder"> <h6>Birthday | <span class="padder"><a><%= user.gender %></a></h6><%= user.birthday %> </span>
+        <h6>Read Timer</h6><%= user.timer %></li>
+        <li>
+
+<%= link_to 'Delete', user, :method => :delete, :class => 'btn btn-danger' , :data => { :confirm => "Are you sure?" } %>    <a href="mailto:<%= user.email %>" class="btn btn-warning">Email User</a></li>
+</ul>
+
+
+
+
             <% end %>
 
       <% end %>
 
       </ul>
-
+      </div>
     </div>
   </div>
-</div>

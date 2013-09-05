@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    before_filter :authenticate_user!, :except => [:show,:index]
-before_filter: set_user_time_zone
+before_filter :authenticate_user!, :except => [:show,:index]
+before_filter :set_user_time_zone
 
 def set_user_time_zone
 Time.zone = current_user.time_zone if user_signed_in?
@@ -36,6 +36,12 @@ end
         user = User.find(params[:id])
         user.update_attributes(params[:user])
         redirect_to(user)
+    end
+
+    def destroy
+      user = User.find(params[:id])
+      user.destroy
+      redirect_to(users_path)
     end
 
   end

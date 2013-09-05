@@ -1,4 +1,4 @@
-<div id="chapter_container">
+<div id="chapter-container">
   <div class="row topper">
 
     <div class="col-lg-6 ">
@@ -8,8 +8,9 @@
               <li class="bottomer"><%= link_to(chapter.title, chapter, :class => "btn-signin") %>        By <%= chapter.user.username %>   |   <%= time_ago_in_words(chapter.created_at)  +  " ago" %></li>
 
           <% if current_user.is_admin? %>
-            <li><%= link_to 'Edit', edit_chapter_path(chapter), :method => :get, :class => 'btn-signin' %>
-            <%= link_to 'Delete', status, :method => :delete, :class => 'btn-signin' %></li>
+          <li>
+            <%= link_to 'Edit', edit_chapter_path(chapter), :method => :get, :class => 'btn btn-warning' %>
+            <%= link_to 'Delete', chapter, :method => :delete, :class => 'btn btn-danger' %></li>
           <% end %>
 
         <% end %>
@@ -18,9 +19,13 @@
 
 
     <div class="col-lg-6">
-      <% if current_user.is_admin? %>
-      <%= link_to('Create a Chapter', new_chapter_path, :class => 'btn-signin') %>
-      <% end %>
+      <ul>
+        <li>
+            <% if current_user.is_admin? %>
+            <%= link_to('Create a Chapter', new_chapter_path, :class => 'btn-signin2') %>
+            <% end %>
+        </li>
+      </ul>
     </div>
 
   </div>

@@ -8,12 +8,12 @@
             <a class="navbar-brand" href="/">NYX <span class="mint">|</span> MYTH</a>
           </div>
           <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav lefty">
+            <ul class="nav navbar-nav lefty navito">
 
         <% if user_signed_in? %>
               <li class="active"><a href="/">Home</a></li>
               <li><a href="/chapters">Read Chapter</a></li>
-              <li><a href="/forum">Forum</a></li>
+              <li><a href="/forums">Forum</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="#" class="btn-buy">BUY NOW</a></li>
 <!--               <li><div class="btn-signin" a href="/login">Sign in</div></li> -->
@@ -28,7 +28,7 @@
                         <li class="dropdown-header"><a href="<%= edit_user_registration_path %>"><span>Edit  </span><%= current_user.username %></a></li>
   <!--                                          <li><a><!%#= link_to('My Profile', current_user)%></li> -->
                 <li class="divider"></li>
-                   <li> <%= link_to "Logout", logout_path, :data => { :confirm => "Are you sure?" }, :class => 'btn-signin' %></li>
+                   <li> <%= link_to "Logout", logout_path, :data => { :confirm => "Are you sure?" }, :class => '' %></li>
               </ul>
             </li>
 
@@ -39,19 +39,18 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Options<b class="caret"></b></a>
 
                           <ul class="dropdown-menu">
-                                    <li class="dropdown-header"><a href="/chapters/new">Create a Chapter</a></li>
-                                    <li class="dropdown-header"><a href="/chapters/new">Edit a Chapter</a></li>
+                                    <li class="dropdown-header"><a href="/chapters/new">Create Chapter</a></li>
+                                    <li class="dropdown-header"><a href="/chapters">Edit Chapter</a></li>
+                                    <li class="divider"></li>
                                     <li class="dropdown-header"><a href="/users">See all Users</a></li>
-                                    <li
-                                  <li class="divider"></li>
-                               <li> </li>
                           </ul>
                         </li>
+                        <li class="topp"><%= notice %></li>
              <% end %>
-              <li class="topp"><%= notice %></li>
 
 
-      <% else %>
+
+        <% else %>
               <li class="active"><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="" class="btn-buy">BUY NOW</a></li>
@@ -61,17 +60,11 @@
               <li><div class="current_date"></div></li>
 
 
-       <li><%= link_to "Register", register_path, :class => '' %></li>
-       <li><%= link_to "Sign In", login_path, :class => '' %></li>
+             <li><%= link_to "Register", register_path, :class => '' %></li>
+             <li><%= link_to "Sign In", login_path, :class => '' %></li>
 
 
         <% end %>
-
-
-
-
-
-
 
             </ul>
           </div><!--/.nav-collapse -->

@@ -10,7 +10,6 @@ require File.expand_path('../../config/environment',  __FILE__)
 #   config[:max_threads] = 15
 # end
 
-
 # # handler do |job|
 # #   puts "Running #{job}"
 # # end
@@ -28,31 +27,27 @@ require File.expand_path('../../config/environment',  __FILE__)
 
 # every(14.day, 'Queueing scheduled job', :at => '14:17') { Delayed::Job.enqueue ScheduledJob.new }
 
-
 every(14.day, 'reminders.send') do
+
   User.all.each do |u|
     ('**:**') = timer
     if u.time_zone == Time.now
       reminders = User.find(:all, :conditions => ["timer <= ?", Time.now], at: => '**:**')
       u.timer &&
 
-  #   # what object is reminders
-#
-# unless reminders.nil?
-#   reminders.each do |i|
-#     user.delay.send_email
-#   end
+              #   # what object is reminders
+            #
+            # unless reminders.nil?
+            #   reminders.each do |i|
+            #     user.delay.send_email
+            #   end
 
         ReminderMailer.send_email(u).deliver
     end
 
-
 end
 
-
-
  # :at => '<% @user.timer %>', :tz => '<% @user.time_zone %>'
-
 
 # Reminder.send_later(:send_reminders)
 # user.delay.send_email
@@ -72,9 +67,6 @@ end
 # end
 
 # }
-
-
-
 
 
 # The wildcard for hour and minute is supported:

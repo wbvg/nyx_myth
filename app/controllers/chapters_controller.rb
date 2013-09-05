@@ -12,9 +12,8 @@ def index
      days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
      # days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
     #@sections = Section.where('timer > ? AND timer < ?' , 1.day.ago.change(:hour => 24), Time.now.change(:hour => 24))
-    @sections = @chapter.sections.limit(days)
-
-
+    @sections = @chapter.sections.order(:id).limit(days)
+    @headsections = @chapter.sections.order(:id).limit(days)
   end
 
   def new
@@ -31,7 +30,6 @@ def index
     @chapter.save
     redirect_to chapters_path
   end
-
 
   def edit
     @chapter = Chapter.find(params[:id])
