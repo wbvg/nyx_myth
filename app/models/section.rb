@@ -13,4 +13,5 @@
 class Section < ActiveRecord::Base
   attr_accessible :pages, :chapter_id , :section_title
   belongs_to :chapter
+
 end

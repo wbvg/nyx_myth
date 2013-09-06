@@ -387,7 +387,7 @@ div.padder {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4em;
   border-radius: 6px;
-  margin-top: 7px;
+  margin: 7px 10px 0 0 ;
   padding: 10px;
 /*  margin-left: 10px;*/
   cursor: pointer;

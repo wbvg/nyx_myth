@@ -7,4 +7,6 @@ class Forum < ActiveRecord::Base
 
   # DISQUS_SHORTNAME = Rails.env == "development" ? "dev_shortname".freeze : "production_shortname".freeze
 
+
+
 end

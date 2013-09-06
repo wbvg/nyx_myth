@@ -2,6 +2,8 @@ class ChaptersController < ApplicationController
 def index
     @users = User.all
     @chapters = Chapter.all
+
+
   end
 
   def show

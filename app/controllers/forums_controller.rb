@@ -3,8 +3,8 @@ class ForumsController < ApplicationController
     @users = User.all
     @chapters = Chapter.all
 
-    days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
-    @sections = @chapter.sections.limit(days)
+    # days = (Time.new - current_user.created_at).to_i / (60 * 60 * 24)
+    # @sections = @chapter.sections.limit(days)
 
   end
 

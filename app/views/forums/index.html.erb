@@ -4,10 +4,13 @@
     <div class="col-lg-6 ">
       <ul>
         <h2 class="bottomer">Forum List</h2>
+
+<!--         I prefer these methods in the view  -->
+
         <% @chapters.each do |chapter| %>
               <li class="bottomer"><span class="btn-signup2"><%= chapter.title%></span>        By <%= chapter.user.username %>   |   <%= time_ago_in_words(chapter.created_at)  +  " ago" %></li>
 
-                  <% chapter.sections.each do |section| %>
+                  <% chapter.sections.order(:id).each do |section| %>
                       <li class="bottomer"><%= link_to(section.section_title, [chapter, section], :class => "btn-signin") %><span class="padder"><%=   %></span></li>
                   <% end %>
         <% end %>
