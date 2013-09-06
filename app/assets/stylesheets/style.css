@@ -51,19 +51,6 @@ li {
   list-style: none;
 }
 
-input::-moz-placeholder  {
-  height:100px;
-  width:100%;
-  color: #fff;
-  position: relative;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2em;
-  padding: 10px;
-  background-color: #00FF8E;
-  margin: 0 auto;
-  text-align: center;
-  border: 2px solid #fff;
-}
 .centra {
   margin: 0 auto;
 }
@@ -71,6 +58,17 @@ input::-moz-placeholder  {
 #disqus_thread {
   padding: 30px;
   margin: 20px;
+}
+
+
+.home_imag {
+  width: 100%;
+  max-width: 600px;
+}
+
+.black {
+  margin: 20px auto;
+  background-color: black;
 }
 
 .border {
@@ -215,6 +213,23 @@ margin-top: 10px;
 margin-left: 10px;
 }
 
+/*==== Input Forms ====*/
+
+
+input::-moz-placeholder  {
+  height:100px;
+  width:100%;
+  color: #fff;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  padding: 10px;
+  background-color: #00FF8E;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #fff;
+}
+
 .navbar {
     text-align: center;
     font:12px Arial, Helvetica, sans-serif;
@@ -310,6 +325,7 @@ div.padder {
   margin: 10px 0 ;
   padding: 0 0 0 0;
 }
+
 .btn-signup {
   color: #fff;
   position: relative;

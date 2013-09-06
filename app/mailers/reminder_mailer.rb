@@ -7,9 +7,12 @@ class ReminderMailer < ActionMailer::Base
 
   def send_email(user)
     @user = user
-    mail(to: @user.email , subject: "New Chapter Section Available", body:"The next chapter section is available visit http://www.nyxmyth.com")
+    mail(to: @user.email , subject: "NYX MYTH | New Chapter Section Available")
   end
 end
+
+
+# , body:"The next chapter section is available visit http://www.nyxmyth.com"
 
 # // Older email from DT's class
 #   def welcome_email(user)
