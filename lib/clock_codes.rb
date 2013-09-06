@@ -3,12 +3,12 @@ include Clockwork
 require File.expand_path('../../config/boot',  __FILE__)
 require File.expand_path('../../config/environment',  __FILE__)
 
-# Clockwork.configure do |config|
-#   config[:sleep_timeout] = 5
-#   config[:logger] = Logger.new(log_file_path)
-#   config[:tz] = 'User.time_zone'
-#   config[:max_threads] = 15
-# end
+Clockwork.configure do |config|
+  config[:sleep_timeout] = 5
+  config[:logger] = Logger.new(log_file_path)
+  config[:tz] = 'User.time_zone'
+  config[:max_threads] = 15
+end
 
 # # handler do |job|
 # #   puts "Running #{job}"
@@ -30,17 +30,21 @@ require File.expand_path('../../config/environment',  __FILE__)
 #how to run clock.rb from lib directory - clockwork clock.rb
 every(14.day, 'reminders.send', :at => '9:57') do
 
-  # User.all.each do |u|
-  #   ('**:**') = timer
-  #   if u.time_zone == Time.now
-  #     reminders = User.find(:all, :conditions => ["timer <= ?", Time.now], at: => '**:**')
-  #     u.timer &&
+  User.all.each do |u|
 
-              #   # what object is reminders
-            #
-            # unless reminders.nil?
-            #   reminders.each do |i|
-            #     user.delay.send_email
+
+
+    ('**:**') = timer
+    if u.timer == Time.now
+
+      reminders = User.find(:all, :conditions => ["timer <= ?", Time.now], at: => '**:**')
+      u.timer &&
+
+                # what object is reminders
+
+            unless reminders.nil?
+              reminders.each do |i|
+                user.delay.send_email
               end
 
         ReminderMailer.send_email(u).deliver

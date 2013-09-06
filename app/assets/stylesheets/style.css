@@ -381,6 +381,7 @@ div.padder {
 
 div.errors {
   z-index: 2000;
+  display: inline-block;
 }
 
 .btn-signin, .btn-edit, .btn-delete {
