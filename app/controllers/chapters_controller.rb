@@ -44,6 +44,6 @@ def index
   def destroy
     chapter = Chapter.find(params[:id])
     chapter.destroy
-    redirect_to(user_path(current_user))
+    redirect_to(chapters_path)
   end
 end

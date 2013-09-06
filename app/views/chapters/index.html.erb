@@ -5,16 +5,17 @@
       <ul>
         <h2 class="bottomer">Chapter List</h2>
         <% @chapters.each do |chapter| %>
+        <ul class="bottomer topper <%= cycle("even", "odd") %>">
               <li class="bottomer"><%= link_to(chapter.title, chapter, :class => "btn-signin") %>        By <%= chapter.user.username %>   |   <%= time_ago_in_words(chapter.created_at)  +  " ago" %></li>
 
           <% if current_user.is_admin? %>
           <li>
             <%= link_to 'Edit', edit_chapter_path(chapter), :method => :get, :class => 'btn btn-warning' %>
-            <%= link_to 'Delete', chapter, :method => :delete, :class => 'btn btn-danger' %></li>
+            <%= link_to 'Delete', chapter, :method => :delete, :class => 'btn btn-danger' , :data => { :confirm => "Are you sure?" }%></li>
           <% end %>
-
+        </ul>
         <% end %>
-      </ul>
+
     </div>
 
 

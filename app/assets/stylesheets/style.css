@@ -379,6 +379,9 @@ div.padder {
   background-color:#eb8cfa;
 }
 
+div.errors {
+  z-index: 2000;
+}
 
 .btn-signin, .btn-edit, .btn-delete {
   color: #fff;
