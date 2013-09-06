@@ -3,9 +3,16 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
+#  timer                  :datetime
 #  username               :string(255)
-#  location               :text
-#  occupation             :string(255)
+#  gender                 :string(255)
+#  birthday               :date
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
 #  reset_password_token   :string(255)
@@ -16,12 +23,8 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  avatar_file_name       :string(255)
-#  avatar_content_type    :string(255)
-#  avatar_file_size       :integer
-#  avatar_updated_at      :datetime
+#  is_admin               :boolean          default(FALSE)
+#  time_zone              :string(255)
 #
 
 require 'spec_helper'
@@ -32,8 +35,10 @@ describe User do
   before(:each) do
     @login_attr = {
       :username => "Willy",
-      :location => "Sydney",
-      :occupation => "UX | UI Designer",
+      :gender => "Male",
+      :birthday => "1982-12-21",
+      :time_zone => "Sydney"
+      :timer => ""
       :email => "user@example.com",
       :password => "123456",
       :password_confirmation => "123456",
@@ -41,11 +46,11 @@ describe User do
       :avatar_content_type => "image/jpeg",
       :avatar_file_size => "38103"
     }
+
     @user = User.new(@login_attr)
   end
 
-    it { should have_many :statuses }
-    it { should have_many :profiles }
+    it { should have_many :chapters }
 
   def valid_attributes
     {
@@ -156,7 +161,7 @@ describe User do
       end
 
       it "should reject short passwords" do
-        short = "a" * 5
+        short = "a" * 3
         hash = @login_attr.merge(:password => short, :password_confirmation => short)
         User.new(hash).should_not be_valid
       end
@@ -179,10 +184,10 @@ describe User do
 
     end
 
-    describe "occupation" do
+    describe "time_zone" do
 
-         it "should have an occupation attribute" do
-        @user.occupation.should eq ("UX | UI Designer")
+         it "should have an time zone attribute" do
+        @user.occupation.should eq ("Sydney")
         end
 
           it "should reject over 40 character limit strings" do
@@ -199,10 +204,10 @@ describe User do
 
     end
 
-     describe "location" do
+     describe "gender" do
 
-          it "should have an occupation attribute" do
-        @user.occupation.should eq ("UX | UI Designer")
+          it "should have an gender attribute" do
+        @user.occupation.should eq ("Male")
         end
 
           it "should reject over 50 character limit strings" do
