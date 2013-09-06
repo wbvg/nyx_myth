@@ -262,7 +262,7 @@ button {
   position: fixed;
   float: left;
   padding: 9px 10px;
-  margin: -40px 0 0 0;
+  margin: 10px 0;
   background-color: #00FF8E;
   border: 1px solid #dddddd;
   border-radius: 6px;
@@ -299,7 +299,7 @@ color: #fff;
 }
 
 #read-panel {
-margin-bottom: 40px;
+margin: 0 0 40px 20px;
 }
 
 div.padder {

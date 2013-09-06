@@ -10,7 +10,7 @@ require File.expand_path('../../config/environment',  __FILE__)
 
 
 # Send an email to all users at specific time
-every(14.day, 'reminders.send', :at => '1:41') do
+every(14.day, 'reminders.send', :at => '3:55') do
 
   User.all.each do |u|
 
